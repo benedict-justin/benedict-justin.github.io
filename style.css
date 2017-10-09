@@ -32,6 +32,18 @@ body {
 	width: 200px;
 }
 
+.twist {
+	width: 200px;
+}
+
+.scale {
+	width: 200px;
+}
+
+.translate {
+	width: 200px;
+}
+
 header a{
 	color: red;
 }
