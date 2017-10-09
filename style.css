@@ -28,6 +28,10 @@ body {
 	max-width: 900px;
 }
 
+.tilt {
+	width: 200px;
+}
+
 header a{
 	color: red;
 }
