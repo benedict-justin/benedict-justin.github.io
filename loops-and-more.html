@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+      
+    <title>CIT 261 - Transforms</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">  
+
+    
+    
+        <script type="text/javascript">
+        
+	function forLoop(){
+            var text = "";
+                for (a = 5; a <= 10; a = a + 1) {
+                    text += a + ", ";
+            }
+                    document.getElementById('outputDiv').innerHTML = text;
+            }
+        
+        
+        function whileLoop(){
+            var low = parseFloat(document.getElementById('low').value);
+            var high = parseFloat(document.getElementById('high').value);
+            var text = "";
+		while(low <= high)
+		{
+                    if (low + 5 > high){
+			return;
+                    } 
+                    else {
+			low = low + 5;
+			text += low + ", ";
+                    }
+                    document.getElementById('outputDiv1').innerHTML = text;
+		}
+	}
+
+        function favoriteStooge(){
+            var name = document.getElementById('name').value;
+            var number = parseFloat(document.getElementById('number').value);
+		if (number <= 99){
+                    document.getElementById('outputDiv2').innerHTML = name + ", you're favorite Stooge is....Larry!";
+                    }
+                else if (number > 99 && number <= 499) {
+                    document.getElementById('outputDiv2').innerHTML = name + ", you're favorite Stooge is....Curly";
+                    }
+                else if (number > 499) {
+                    document.getElementById('outputDiv2').innerHTML = name + ", you're favorite Stooge is....Moe";
+                }
+        }
+    
+    
+        var array = new Array(); 
+
+	function insertArray(){
+                    array.push(document.getElementById('newArray').value);
+                    document.getElementById('newArray').value='';
+                    document.getElementById('outputDiv3').innerHTML = array;
+        }
+	function reset(){
+                    array = [];
+                    document.getElementById('outputDiv3').innerHTML = array;
+	}
+			
+	function add(){
+            var list = array.slice();
+            var addition = parseFloat(document.getElementById('addition').value);
+		for (var i = 0;  i < list.length;  i++) {
+                    list[i] = (list[i]) + addition;
+                }
+                    document.getElementById('outputDiv4').innerHTML = list;
+        }
+    
+    
+        </script>   
+    
+    
+    
+</head>
+    
+ 
+    
+
+            
+        
+    
+
+    
+    
+    
+    <body>
+	   <header>
+	       <a href="index.html">
+               <h1>CIT 261 - Loops and More</h1>
+	       </a>
+	   </header>
+        
+
+        <div class="background2">
+            <h1>For Loop</h1>
+            <p>Counts from 5 - 10</p>
+                <button type="button" onclick="forLoop()">Press Button</button>
+                <br/><br/>
+                <div id="outputDiv"></div>       
+        </div>
+        
+        
+       <div class="background2">
+            <h1>While Loop</h1>
+            <p>Enter two number values and it will count by 5's</p>
+                <p>Low Number: <input type="text" id="low"> High Number: <input type="text" id="high"> </p>
+                <button type="button" onclick="whileLoop()">Press Button</button>
+                <br/><br/>
+                <div id="outputDiv1"></div>   
+        </div>
+        
+        
+        <div class="background2">
+            <h1>Else If:</h1>
+            <p>Enter your name and favorite number.</p>
+		<p>Name: <input type="text" id="name"> Favorite Number: <input type="text" id="number"> </p>
+		<button type="button" onclick="favoriteStooge()">Favorite Stooge?</button>
+                <br/><br/>                
+		<div id="outputDiv2"></div>
+             
+        </div>     
+         
+        
+        <div class="background2">
+            <h1>Arrays:</h1>
+            <p>Enter a single number into the box and press "Add to Array"; create an array of any size. Use this array in the following function.<p>
+		<input id="newArray" type="text" />
+		<input type="button" value="Add to Array" onclick="insertArray()" /><input type="button" value="Reset Array" onclick="reset()" />
+		<div id="outputDiv3"></div>
+		<h3>Add:</h3>
+		<p>Add to each number in the array: <input type="text" id="addition" class="arrayBox"> <button type="button" onclick="add()">Add</button></p>
+		<div id="outputDiv4"></div>    
+            
+            
+            
+        </div>
+                
+    </body>
+    
+    
+
+
+
+        
