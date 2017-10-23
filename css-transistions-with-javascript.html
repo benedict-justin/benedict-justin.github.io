@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	   <meta charset="utf-8">
+	   <title></title>
+	   <link rel="stylesheet" type="text/css" href="style.css" media="screen">	
+	
+	
+        <script type="text/javascript">
+            function transition(element, width, color) {
+                var element = document.getElementById(element);
+                element.style.transition = "width 1s linear 0s, background 1s linear 0s";
+                element.style.width = width;
+                element.style.background = color;
+            }
+		
+            function myFunction(element, width, height, color){
+                var element = document.getElementById(element);
+                element.style.transition = "width 1s linear 0s, height 1s linear 0s, background 1s linear 0s";
+                element.style.height = height;
+                element.style.width = width;
+                element.style.background = color;
+            }
+            
+        </script>
+            
+            
+        
+        <style>
+            #div1{
+                width: 100px;
+                height: 100px;
+                background: blue;
+            }
+		
+		
+		
+            #div3{
+                width: 100px;
+                height: 100px;
+                background: orange;
+            }
+        </style>
+
+</head>
+            
+
+        <header>
+	    <a href="index.html">
+            <h1>CIT 261 - Trigger CSS3 Transitions</h1>
+	    </a>
+	</header>
+	
+        <div class="background2">
+		
+	<h3>Button On/Off</h3>
+            <button onclick="transition('div1', '400px', 'yellow')">Change</button>
+            <button onclick="transition('div1', '100px', 'blue')">Reverse</button>
+            <br>
+            <br>
+	<div id="div1"></div>
+		
+        <h3>Mouse Over and Mouse Out</h3>
+	<div id="div3" onmouseover="myFunction('div3', '200px', '200px', 'green')" onmouseout="myFunction('div3', '100px', '100px', 'orange')"></div>
+        </div>
+</html>

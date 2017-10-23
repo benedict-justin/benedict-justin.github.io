@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	   <meta charset="utf-8">
+	   <title>HTML 5 - Tags</title>
+	   <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+                  
+    </head>
+
+    <body>
+    <div class="background2">
+
+        <br>        
+        <h1>HTML5 Tags - Video, Audio, and Canvas</h1>     
+        
+        <h2>Canvas Text</h2>
+        <canvas width="800" height="400">
+                <script type="text/javascript">
+                window.onload = function() {
+                var canvas = document.getElementById('myCanvas');
+                var ctx = canvas.getContext('2d');
+                
+                ctx.font = '30pt Arial';
+                ctx.fillText('TAGS - Video, Audio, and Canvas', 300, 250);
+                
+                ctx.save();
+                ctx.translate(100, 300);
+                ctx.rotate(-0.5*Math.PI);
+                
+                var rText = 'Rotated: TAGS - Video, Audio, and Canvas';
+                ctx.fillText(rText, 0,0);
+                ctx.restore();
+                
+                var rWidth = ctx.measureText(rText).width;
+                ctx.fillText('TAGS - Video, Audio, and Canvas', 100, rWidth + 120);
+                };
+                </script>
+            
+        </canvas>
+        <br>
+        
+        <h2>YouTube - Moana "You're Welcome</h2>
+            <iframe width="854" height="480" src="https://www.youtube.com/embed/79DijItQXMM" frameborder="0" allowfullscreen></iframe>
+        <br>
+        
+        <h2>Rocket League</h2>
+            <video width="854" height="480" controls>
+            <source src="media/Air Dribble.mp4" type="video/mp4">
+            The browser you are using does not support this video tag
+            </video>
+
+        </div>   
+    </body>
+    
+</html>
