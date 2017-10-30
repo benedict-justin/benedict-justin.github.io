@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      
+    <title>CIT 261 - JSON Parse</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+
+
+	<script type="text/javascript">
+            var list = new Array();
+		
+		
+            function createList(){
+		
+                list.push(document.getElementById('newArray').value);
+			
+		document.getElementById('newArray').value=''; 
+		document.getElementById('outputDiv').innerHTML = list;
+			
+		var string = JSON.stringify(list);
+		document.getElementById('outputDiv2').innerHTML = string;
+			
+		var object = JSON.parse(string);
+		var length = object.length;
+		var text = " ";
+			
+		for (i = 0; i < length; i++ ) {
+                    text += object[i] + " ";
+				
+			
+		}
+		document.getElementById('outputDiv3').innerHTML = text;	
+            }
+		
+	</script>
+	
+</head>
+
+<body>
+	<header>
+	<a href="index.html">
+            <h1>JSON Parse</h1>
+	</a>
+	</header>
+	<div class="background2">
+            <h2>JSON Parse and Stringify:</h2>
+            <p>Type out a list. Stringify converts it to a string. Parse will make it JavaScript.</p>
+            <input type="text" id="newArray"></input>
+            <button onclick="createList()">Add to List</button><br>
+            <h2>Your list:</h2>
+            <div id="outputDiv"></div><br>
+            <h2>Stringify:</h2>
+            <div id="outputDiv2"></div><br>
+            <h2>Parse:</h2>
+            <div id="outputDiv3"></div>
+
+        </div>
+	
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      
+    <title>CIT 261 - Javascript Events</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    
+    <script type="text/javascript">
+        function myFunction(){
+            document.getElementById('p1').innerHTML = "Thanksssss";
+            }
+		
+        function myFunction2(){
+            alert("Will the page load?");
+            }
+		
+        function myFunction3(element){
+            var random = Math.floor((Math.random() * 15) + 1);
+            if (random < 10){
+            var color = "red";
+            }
+            else if (random < 20){
+            var color = "orange";
+            }
+            else if (random < 30){
+            var color = "yellow";
+            }
+            else if (random < 40){
+            var color = "green";
+            }
+            else if (random < 50){
+            var color = "blue";
+            }
+            var element = document.getElementById(element);
+			
+            element.style.transition = "width 1s linear 0s, background 1s linear 0s";
+            element.style.background = color;
+            }
+		
+        function myFunction4(){
+            document.getElementById('p2').innerHTML = "I'm green";
+            }
+		
+        function myFunction5(){
+            document.getElementById('p2').innerHTML = "Black Again";
+            }
+		
+        function myFunction6(element, color){
+            var element = document.getElementById(element);
+			
+            element.style.transition = "width 1s linear 0s, background 1s linear 0s";
+            element.style.background = color;
+            }
+		
+    </script>
+	
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            }
+		
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: orange;
+            }
+    </style>
+</head>
+
+<body onload="myFunction2()">
+    <header>
+	<a href="index.html">
+        <h2>CIT 261 - Javascript Events</h2>
+	</a>
+    </header>
+	<div class="background2">
+            <h2>onLoad:</h2>
+            <p>Pop-up alerts, really?</p>	
+            
+            <h2>onClick:</h2>
+            <button onclick="myFunction()">Click me</button>
+            <p id="p1"></p>
+		
+            <h2>onKeyDown:</h2>
+            <p>Start typing</p>
+            <input type="text" onkeydown="myFunction3('div1')">
+            <br><br>
+            <div id="div1"></div>
+		
+            <h2>onMouseOver</h2>
+            <p id='p2' onmouseover="style.color='green', myFunction4();" onmouseout="style.color='black', myFunction5()">Use Mouse</p>
+		
+            <h3>onTouchStart</h3>
+            <p>Touch the square with a mouse click and it will turn green, or red when using a touch screen.</p>
+            <div id="div2" onclick="myFunction6('div2', 'green')" onTouchStart="myFunction6('div2','red')"></div>
+
+	</div>
+	
+</body>
+</html>
