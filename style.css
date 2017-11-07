@@ -142,4 +142,9 @@ b {
 /* CSS3 Transitions************************* */
 
 
-  
+/* Local Storage************************* */
+#storageBox{
+    width: 100px;
+    height: 100px;
+    background: blue;
+}  
