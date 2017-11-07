@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+      
+    <title>CIT 261 - DOM Manipulation</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    
+    
+        <script type="text/javascript">
+            function start(){
+		document.getElementById('addCar').innerHTML = "Select Cars";
+
+        	var mustang = document.createElement("button");
+		var t = document.createTextNode("Mustang");
+		mustang.appendChild(t);
+		mustang.addEventListener ("click", function() {
+                    var newItem = document.createElement("LI");
+                    var textnode = document.createTextNode("Mustang");
+                    newItem.appendChild(textnode);
+
+		var list = document.getElementById("selectCars");
+                    list.insertBefore(newItem, list.childNodes[0]);
+                    });
+		
+                var gto = document.createElement("input");
+                    gto.type = "button";
+                    gto.value = "GTO";
+                    gto.addEventListener ("click", function() {
+                    var newItem = document.createElement("LI");
+                    var textnode = document.createTextNode("GTO");
+                    newItem.appendChild(textnode);
+
+		var list = document.getElementById("selectCars");
+                    list.insertBefore(newItem, list.childNodes[0]);
+                    });
+		
+                var viper = document.createElement("input");
+                    viper.type = "button";
+                    viper.value = "Viper";
+                    viper.addEventListener ("click", function() {
+                    var newItem = document.createElement("LI");
+                    var textnode = document.createTextNode("Viper");
+                    newItem.appendChild(textnode);
+
+                    var list = document.getElementById("selectCars");
+                    list.insertBefore(newItem, list.childNodes[0]);
+                    });
+					
+		var remove = document.createElement("input");
+                    remove.type = "button";
+                    remove.value = "Remove Last Item Added";
+                    remove.addEventListener ("click", function() {
+                    var list = document.getElementById("selectCars");
+                    list.removeChild(list.childNodes[0]);
+					});
+
+		document.getElementById('cars').appendChild(mustang);
+		document.getElementById('cars').appendChild(gto);
+		document.getElementById('cars').appendChild(viper);
+		document.getElementById('cars').appendChild(remove);
+           }
+           
+            function race() {
+                if (selectCars < 3) {
+                    document.getElementById('outputDiv2').innerHTML = "Create 3 racers to start the race.";
+                } else {
+                    document.getElementById('outputDiv2').innerHTML = "Hahahaha - You forgot to grab the keys!";
+                }
+            }
+       </script>
+    
+    
+</head>
+
+
+<body>
+        <header>
+            <a href="index.html">
+            <h1>CIT 261 - DOM Manipulation</h1>
+	    </a>
+	</header>
+    
+        <div class="background2">
+            <h2>Race Time</h2>
+            <div id="addCar">
+                <button onclick="start()" id="button1">Add Vehicle</button>
+            </div>
+            <div id="cars"></div>
+            <br/>
+            <ul id="selectCars"></ul>
+        
+            <p>Ready to Race?</p>
+            <button onclick="race()">Race!</button><br>
+            <br><div id="outputDiv2"></div>
+        </div>
+    
+
+</body>
+
+</html>

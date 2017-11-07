@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+      
+    <title>CIT 261 - Object Creation Functions</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    
+    
+    <script type="text/javascript">
+	function setCar(){
+            this.make = document.getElementById('make').value;
+            this.model = document.getElementById('model').value;
+            this.year = document.getElementById('year').value;
+            this.color = document.getElementById('color').value;
+		this.myCar = function(){
+                    return "Make: " + this.make + "<br>" +
+                    "Model: " + this.model + "<br>" +
+                    "Year: " + this.year + "<br>" +
+                    "Color: " + this.color + "<br>";
+                    }
+	}
+			
+	function createCar(){
+            var newCar = new setCar();
+            localStorage.setItem("car", JSON.stringify(newCar));
+            document.getElementById("carObject").innerHTML = newCar.myCar();
+	}
+			
+	function rememberCar(){
+            var retrieveCar = localStorage.getItem("car");
+            var carText = JSON.parse(retrieveCar);
+            document.getElementById("carObject").innerHTML = "Make: " + carText.make + "<br>" +
+		"Model: " + carText.model + "<br>" +
+		"Year: " + carText.year + "<br>" +
+		"Color: " + carText.color + "<br>";
+	}
+			
+	function createStyle(){
+            var styleBox = {
+		"color":document.getElementById('boxColor').value,
+		"width":document.getElementById('width').value + "px",
+		"height":document.getElementById('height').value + "px",
+		"diameter":document.getElementById('rounded').value + "px",
+	};
+	    document.getElementById("storageBox").style.background = styleBox["color"];
+            document.getElementById("storageBox").style.width = styleBox["width"];
+            document.getElementById("storageBox").style.height = styleBox["height"];
+            document.getElementById("storageBox").style.borderRadius = styleBox["diameter"];
+            localStorage.setItem("style", JSON.stringify(styleBox));
+	}
+				
+	function rememberStyle(){
+            var retrieveStyle = localStorage.getItem("style");
+            var returnedStyle = JSON.parse(retrieveStyle);
+				
+            document.getElementById("storageBox").style.background = returnedStyle.color;
+            document.getElementById("storageBox").style.width = returnedStyle.width;
+            document.getElementById("storageBox").style.height = returnedStyle.height;
+            document.getElementById("storageBox").style.borderRadius = returnedStyle.diameter;
+	}            
+            
+            
+            
+    </script>
+    
+    
+    
+</head>
+
+
+<body>
+        <header>
+            <a href="index.html">
+            <h1>CIT 261 - Local Storage</h1>
+	    </a>
+	</header>
+    
+        <div class="background2">
+            <h2>Create Car Objects</h2>
+		<input type="text" id="make" placeholder="Make"></input><br>
+		<input type="text" id="model" placeholder="Model"></input><br>
+		<input type="text" id="year" placeholder="Year"></input><br>
+		<input type="text" id="color" placeholder="Color"></input><br>
+		<button onclick="createCar()">Create Car</button><button onclick="remember()">Remember</button>
+		<div id="carObject"></div>
+
+		<h2>Style Box</h2>
+		<input type="text" id="boxColor" placeholder="Color"></input><br>
+		<input type="text" id="width" placeholder="Width"></input><br>
+		<input type="text" id="height" placeholder="Height"></input><br>
+		<input type="text" id="rounded" placeholder="Edge Diameter"></input><br>
+		<button onclick="createStyle()">Style Box</button><button onclick="rememberStyle()">Remember</button><br><br>
+		<div id="storageBox"></div>
+                
+                
+        </div>
+    
+
+</body>
+
+</html>
