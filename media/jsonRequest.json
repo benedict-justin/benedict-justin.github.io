@@ -1,0 +1,17 @@
+[{
+    "card": "Black Lotus",
+    "picURL": "http://i.imgur.com/Cu0A2T6.jpg",
+    "mana": "0",
+    "type": "Artifact"
+},{
+    "card": "Khalni Hydra",
+    "picURL": "https://i.pinimg.com/736x/02/2d/f9/022df9c11dd13dff9dcb519288a4d9d6--deck-of-cards-magic-the-gathering-cards.jpg",
+    "mana": "8 Forest",
+    "type": "Creature"
+},{
+    "card": "Ball Lightning",
+    "picURL": "http://static.starcitygames.com/sales/cardscans/MTG/4ED/en/nonfoil/BallLightning.jpg",
+    "mana": "3 Fire",
+    "type": "Creature"
+}]
+
