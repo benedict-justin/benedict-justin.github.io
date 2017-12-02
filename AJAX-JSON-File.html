@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta charset="utf-8">
+	<title>CIT 261 - AJAX-JSON-File</title>
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+        <script type="text/javascript" src="media/jsonRequest.json"></script>
+        <script type="text/javascript" src="media/magicJSON.js"></script>                  
+    </head>
+
+    <body>
+    <header>
+        <a href="index.html">
+        <h1>CIT 261 - AJAX-JSON-File</h1>
+        </a>
+    </header>
+        <div class="background2">
+        <h1>AJAX requesting a JSON file</h1>
+ 
+        <div id="slideContainer">
+            <input type="range" value="0" min="0" max="2" class="slider" oninput="magic(this.value)" onchange="magic(this.value)">
+        </div>
+        <div id="jsonHeader"></div>
+        <div id="jsonPic"></div>
+        <div id="jsonDetails"></div>
+        <div id="jsonStringOutput"></div>
+        </div>
+</html>
