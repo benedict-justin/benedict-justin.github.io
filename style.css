@@ -141,7 +141,7 @@ b {
 
 /* CSS3 Transitions************************* */
 
-.div5:hover {
+#div5:hover {
     width: 300px;
     background: blue;
     transform: rotate(180deg);
