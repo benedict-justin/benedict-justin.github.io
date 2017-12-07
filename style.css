@@ -141,8 +141,6 @@ b {
 
 /* CSS3 Transitions************************* */
 
-div5:hover { 
-
 #div5 {
     width: 300px;
     background: blue;
@@ -152,9 +150,6 @@ div5:hover {
     transition-timing-function: ease-in-out;
     transition-delay: 0.5s;
     }
-	
-}
-    
 
 /* Local Storage************************* */
 #storageBox{
