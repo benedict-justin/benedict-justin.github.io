@@ -141,11 +141,12 @@ b {
 
 /* CSS3 Transitions************************* */
 
-#div5:hover {
+#div5 {
     width: 300px;
     background: blue;
     transform: rotate(180deg);
 
+    transition:hover
     transition: width 2s, transform 2s;
     transition-timing-function: ease-in-out;
     transition-delay: 0.5s;
