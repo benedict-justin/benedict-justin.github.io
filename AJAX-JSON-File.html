@@ -1,28 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en-US">
     <head>
-	<meta charset="utf-8">
-	<title>CIT 261 - AJAX-JSON-File</title>
-	<link rel="stylesheet" type="text/css" href="style.css" media="screen">
-        <script type="text/javascript" src="media/jsonRequest.json"></script>
-        <script type="text/javascript" src="media/magicJSON.js"></script>                  
+        <meta charset="utf-8">
+        <title>CIT 261 - AJAX-JSON FILE</title>
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+        <script type="text/javascript" src="scripts/disney.json"></script>
+        <script type="text/javascript" src="scripts/disney.js"></script>
     </head>
-
     <body>
-    <header>
+        <header>
         <a href="index.html">
-        <h1>CIT 261 - AJAX-JSON-File</h1>
+        <h1>CIT 261 - AJAX-JSON FILE</h1>
         </a>
-    </header>
+        </header>
         <div class="background2">
-        <h1>AJAX requesting a JSON file</h1>
- 
+        <h2>Disney Movies</h2>
         <div id="slideContainer">
-            <input type="range" value="0" min="0" max="2" class="slider" oninput="magic(this.value)" onchange="magic(this.value)">
+            <input type="range" value="0" min="0" max="8" class="slider" oninput="disneyJSON(this.value)" onload="disneyJSON(this.value)">
         </div>
-        <div id="jsonHeader"></div>
+        <br>
+        <div id="jsonTitle"></div>
         <div id="jsonPic"></div>
-        <div id="jsonDetails"></div>
-        <div id="jsonStringOutput"></div>
         </div>
+    </body>
 </html>
